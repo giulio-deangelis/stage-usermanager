@@ -1,0 +1,10 @@
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+	<edmx:DataServices xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" m:DataServiceVersion="2.0">
+		<Schema Namespace="usermanager.user" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices"
+			xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+			<EntityType Name="userType">
+				<Key><PropertyRef Name="Key"/></Key><Property Name="Key" Type="Edm.Int32" Nullable="false"/><Property Name="Name" Type="Edm.String" Nullable="false" MaxLength="100"/><Property Name="Surname" Type="Edm.String" Nullable="false" MaxLength="100"/><Property Name="Birthday" Type="Edm.DateTime" Nullable="false"/></EntityType>
+			<EntityContainer Name="user" m:IsDefaultEntityContainer="true"><EntitySet Name="user" EntityType="usermanager.user.userType"/></EntityContainer>
+		</Schema>
+	</edmx:DataServices>
+</edmx:Edmx>

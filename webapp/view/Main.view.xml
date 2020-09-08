@@ -1,0 +1,61 @@
+<mvc:View controllerName="training.usermanager.controller.Main" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
+	<Shell id="shell" appWidthLimited="false">
+		<App id="app">
+			<pages>
+				<Page id="page" title="{i18n>title}">
+					<content>
+						<Table items="{UserManager>/user}" growing="true" growingScrollToLoad="true" mode="MultiSelect" selectionChange="onSelectionChange" id="table">
+							<headerToolbar>
+								<OverflowToolbar>
+									<Button text="{i18n>add}" press="onAddButtonPress" id="addButton" icon="sap-icon://add" type="Ghost"/>
+									<Button text="{i18n>edit}" press="onEditButtonPress" id="editButton" icon="sap-icon://edit" type="Ghost"/>
+									<Button text="{i18n>save}" press="onSaveButtonPress" visible="false" id="saveButton" type="Accept" icon="sap-icon://save"/>
+									<Button text="{i18n>cancel}" press="onCancelButtonPress" visible="false" id="cancelButton" icon="sap-icon://reset"/>
+									<ToolbarSpacer/>
+									<Button text="{i18n>remove}" press="onRemoveButtonPress" visible="false" id="removeButton" type="Reject" icon="sap-icon://delete"/>
+									<Button press="onExportButtonPress" id="exportButton" icon="sap-icon://download"/>
+									<SearchField placeholder="Filtra..." liveChange="onFilter" showSearchButton="false" id="searchBar" width="25%"/>
+								</OverflowToolbar>
+							</headerToolbar>
+							<items>
+								<ColumnListItem type="Active" id="columns">
+									<cells>
+										<Text text="{UserManager>Key}" id="keyCell"/>
+										<Text text="{UserManager>Name}" id="nameCell"/>
+										<Text text="{UserManager>Surname}" id="surnameCell"/>
+										<Text text="{ path: 'UserManager>Birthday', formatter: '.formatter.formatDate' }" id="birthdayCell"/>
+									</cells>
+								</ColumnListItem>
+							</items>
+							<columns>
+								<Column id="column0">
+									<header>
+										<Label text="{i18n>key}" id="label0"/>
+									</header>
+								</Column>
+								<Column id="column1">
+									<header>
+										<Label text="{i18n>name}" id="label1"/>
+									</header>
+								</Column>
+								<Column id="column2">
+									<header>
+										<Label text="{i18n>surname}" id="label2"/>
+									</header>
+								</Column>
+								<Column id="column3">
+									<header>
+										<Label text="{i18n>birthday}" id="label3"/>
+									</header>
+								</Column>
+							</columns>
+						</Table>
+					</content>
+					<footer>
+						<Toolbar id="footer"/>
+					</footer>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>

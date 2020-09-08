@@ -1,0 +1,26 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout" editable="true" layout="ResponsiveGridLayout"
+	id="addUserFragment">
+	<Dialog title="{i18n>add}">
+		<content>
+			<sap.ui.layout.form:SimpleForm xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:sap.ui.layout.form="sap.ui.layout.form"
+				xmlns:sap.ui.core="sap.ui.core" editable="true" layout="ResponsiveGridLayout" id="userForm">
+				<sap.ui.layout.form:content>
+					<Label text="{i18n>key}"/>
+					<Input value="{/Key}"/>
+					<Label text="{i18n>name}"/>
+					<Input value="{/Name}"/>
+					<Label text="{i18n>surname}"/>
+					<Input value="{/Surname}"/>
+					<Label text="{i18n>birthday}"/>
+					<DatePicker value="{/Birthday}" valueFormat="dd/MM/yyyy" displayFormat="dd/MM/yyyy"/>
+				</sap.ui.layout.form:content>
+			</sap.ui.layout.form:SimpleForm>
+		</content>
+		<beginButton>
+			<Button text="{i18n>add}" press="onSaveUserButtonPress" id="saveUserButton"/>
+		</beginButton>
+		<endButton>
+			<Button text="{i18n>cancel}" icon="sap-icon://decline" press="onCancelUserButtonPress" id="cancelUserButton"/>
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>
